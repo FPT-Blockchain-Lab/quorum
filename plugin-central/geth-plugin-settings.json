@@ -1,0 +1,10 @@
+{
+ "baseDir": "./build/bin",
+ "providers": {
+   "helloworld": {
+     "name":"quorum-plugin-hello-world",
+     "version":"1.0.0",
+     "config": "file://./build/bin/hello-world-plugin-config.json"
+   }
+ }
+}
