@@ -754,7 +754,7 @@ func (q *QuorumControlsAPI) valNodeDetails(url string) error {
 		if err != nil {
 			return ptype.ErrInvalidNode
 		}
-		if q.permCtrl.isRaft && !q.permCtrl.useDns && enodeDet.Host() != "" {
+		if !q.permCtrl.useDns && enodeDet.Host() != "" {
 			return ptype.ErrHostNameNotSupported
 		}
 		// check if node already there
