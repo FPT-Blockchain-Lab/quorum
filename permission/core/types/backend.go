@@ -337,11 +337,13 @@ func GetNodeDetails(url string, isRaft, useDns bool) (string, string, uint16, ui
 	}
 
 	ip = enodeDet.IP().String()
-	log.Info("Ben ngoai useDns")
+	log.Info("Raw URL", "url", url)
+	log.Info("ip value", "ip", ip)
 	log.Info("Gia tri useDns", "useDns", useDns)
 	if useDns {
-		log.Info("Ben trong useDns")
+		log.Info("Gia tri Host", "Host", enodeDet.Host())
 		if enodeDet.Host() != "" {
+			log.Info("Ben trong Host")
 			ip = enodeDet.Host()
 		}
 	}
