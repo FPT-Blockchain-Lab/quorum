@@ -337,7 +337,7 @@ func GetNodeDetails(url string, isRaft, useDns bool) (string, string, uint16, ui
 	}
 
 	ip = enodeDet.IP().String()
-	if isRaft && useDns {
+	if useDns {
 		if enodeDet.Host() != "" {
 			ip = enodeDet.Host()
 		}

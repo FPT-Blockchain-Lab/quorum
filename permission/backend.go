@@ -191,7 +191,7 @@ func (p *PermissionCtrl) NewPermissionControlService() (ptype.ControlService, er
 }
 
 func (p *PermissionCtrl) getContractBackend() ptype.ContractBackend {
-	return ptype.ContractBackend{EthClnt: p.ethClnt, Key: p.key, PermConfig: p.permConfig, IsRaft: p.isRaft, UseDns: p.isRaft, ChainID: p.chainID}
+	return ptype.ContractBackend{EthClnt: p.ethClnt, Key: p.key, PermConfig: p.permConfig, IsRaft: p.isRaft, UseDns: p.useDns, ChainID: p.chainID}
 }
 
 func (p *PermissionCtrl) ConnectionAllowed(_enodeId, _ip string, _port, _raftPort uint16) (bool, error) {
