@@ -284,7 +284,10 @@ func (p *PermissionCtrl) populateOrgsFromContract() error {
 func (p *PermissionCtrl) populateStaticNodesToContract() error {
 	nodes := p.node.Server().Config.StaticNodes
 	for _, node := range nodes {
+
 		url := pcore.GetNodeUrl(node.EnodeID(), node.Host(), uint16(node.TCP()), uint16(node.RaftPort()), p.isRaft)
+		log.Info("populateStaticNodesToContract url", "url", url)
+		log.Info("populateStaticNodesToContract url", "node.Host()", node.Host())
 		_, err := p.contract.AddAdminNode(url)
 		if err != nil {
 			log.Warn("Failed to propose node", "err", err, "enode", node.EnodeID())
