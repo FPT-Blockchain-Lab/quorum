@@ -197,7 +197,8 @@ func parseComplete(rawurl string) (*Node, error) {
 	}
 	// End-Quorum
 
-	return NewV4(id, ip, int(tcpPort), int(udpPort)), nil
+	return NewV4Hostname(id, u.Hostname(), int(tcpPort), int(udpPort), 0), nil
+	// return NewV4(id, ip, int(tcpPort), int(udpPort)), nil
 }
 
 func HexPubkey(h string) (*ecdsa.PublicKey, error) {
