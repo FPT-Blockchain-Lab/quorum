@@ -91,8 +91,8 @@ type IAmendmentRequest struct {
 }
 
 type AmendmentCount struct {
-	TotalAmendment		*big.Int
-	NumOfRootAmendment	*big.Int
+	TotalAmendment     *big.Int
+	NumOfRootAmendment *big.Int
 }
 
 func (i IStageContractContentParams) toBindingStageContractContent() bindings.IStageContractContent {
