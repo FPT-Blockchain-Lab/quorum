@@ -1226,7 +1226,7 @@ func (_LCManagement *LCManagementFilterer) FilterRoleGranted(opts *bind.FilterOp
 	return &LCManagementRoleGrantedIterator{contract: _LCManagement.contract, event: "RoleGranted", logs: logs, sub: sub}, nil
 }
 
-var RoleGrantedTopicHash = "0x2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d"
+// var RoleGrantedTopicHash = "0x2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d"
 
 // WatchRoleGranted is a free log subscription operation binding the contract event 0x2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d.
 //
@@ -1390,7 +1390,7 @@ func (_LCManagement *LCManagementFilterer) FilterRoleRevoked(opts *bind.FilterOp
 	return &LCManagementRoleRevokedIterator{contract: _LCManagement.contract, event: "RoleRevoked", logs: logs, sub: sub}, nil
 }
 
-var RoleRevokedTopicHash = "0xf6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b"
+// var RoleRevokedTopicHash = "0xf6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b"
 
 // WatchRoleRevoked is a free log subscription operation binding the contract event 0xf6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b.
 //

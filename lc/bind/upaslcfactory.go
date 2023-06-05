@@ -26,17 +26,17 @@ var (
 	_ = event.NewSubscription
 )
 
-// IStageContractContent is an auto generated low-level Go binding around an user-defined struct.
-type IStageContractContent struct {
-	RootHash       [32]byte
-	SignedTime     *big.Int
-	PrevHash       [32]byte
-	NumOfDocuments *big.Int
-	ContentHash    [][32]byte
-	Url            string
-	Acknowledge    []byte
-	Signature      []byte
-}
+// // IStageContractContent is an auto generated low-level Go binding around an user-defined struct.
+// type IStageContractContent struct {
+// 	RootHash       [32]byte
+// 	SignedTime     *big.Int
+// 	PrevHash       [32]byte
+// 	NumOfDocuments *big.Int
+// 	ContentHash    [][32]byte
+// 	Url            string
+// 	Acknowledge    []byte
+// 	Signature      []byte
+// }
 
 // UPASLCFactoryABI is the input ABI used to generate the binding from.
 const UPASLCFactoryABI = "[{\"inputs\":[{\"internalType\":\"contractILCManagement\",\"name\":\"_management\",\"type\":\"address\"},{\"internalType\":\"contractIWrapper\",\"name\":\"_wrapper\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"documentID\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"creator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"lcContractAddr\",\"type\":\"address\"}],\"name\":\"NewUPASLC\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"UPAS_WRAPPER\",\"outputs\":[{\"internalType\":\"contractIWrapper\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_executor\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_documentId\",\"type\":\"uint256\"},{\"internalType\":\"string[]\",\"name\":\"_parties\",\"type\":\"string[]\"}],\"name\":\"amend\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"_contract\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string[]\",\"name\":\"_parties\",\"type\":\"string[]\"},{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"rootHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"signedTime\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"prevHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"numOfDocuments\",\"type\":\"uint256\"},{\"internalType\":\"bytes32[]\",\"name\":\"contentHash\",\"type\":\"bytes32[]\"},{\"internalType\":\"string\",\"name\":\"url\",\"type\":\"string\"},{\"internalType\":\"bytes\",\"name\":\"acknowledge\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"signature\",\"type\":\"bytes\"}],\"internalType\":\"structIStageContract.Content\",\"name\":\"_content\",\"type\":\"tuple\"}],\"name\":\"create\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"_contract\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_documentId\",\"type\":\"uint256\"}],\"name\":\"getLCAddress\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"management\",\"outputs\":[{\"internalType\":\"contractILCManagement\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_management\",\"type\":\"address\"}],\"name\":\"setLCManagement\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]"
