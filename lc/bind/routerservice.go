@@ -26,44 +26,44 @@ var (
 	_ = event.NewSubscription
 )
 
-// IAmendRequestAmendStage is an auto generated low-level Go binding around an user-defined struct.
-type IAmendRequestAmendStage struct {
-	Stage    *big.Int
-	SubStage *big.Int
-	Content  IStageContractContent
-}
+// // IAmendRequestAmendStage is an auto generated low-level Go binding around an user-defined struct.
+// type IAmendRequestAmendStage struct {
+// 	Stage    *big.Int
+// 	SubStage *big.Int
+// 	Content  IStageContractContent
+// }
 
-// IAmendRequestConfirmation is an auto generated low-level Go binding around an user-defined struct.
-type IAmendRequestConfirmation struct {
-	IssuingBank        string
-	AdvisingBank       string
-	ReimbursingBank    string
-	IssuingBankSig     []byte
-	AdvisingBankSig    []byte
-	ReimbursingBankSig []byte
-}
+// // IAmendRequestConfirmation is an auto generated low-level Go binding around an user-defined struct.
+// type IAmendRequestConfirmation struct {
+// 	IssuingBank        string
+// 	AdvisingBank       string
+// 	ReimbursingBank    string
+// 	IssuingBankSig     []byte
+// 	AdvisingBankSig    []byte
+// 	ReimbursingBankSig []byte
+// }
 
-// IAmendRequestRequest is an auto generated low-level Go binding around an user-defined struct.
-type IAmendRequestRequest struct {
-	TypeOf          *big.Int
-	Proposer        common.Address
-	MigratingStages [][32]byte
-	AmendStage      IAmendRequestAmendStage
-	Confirmed       IAmendRequestConfirmation
-	IsFulfilled     bool
-}
+// // IAmendRequestRequest is an auto generated low-level Go binding around an user-defined struct.
+// type IAmendRequestRequest struct {
+// 	TypeOf          *big.Int
+// 	Proposer        common.Address
+// 	MigratingStages [][32]byte
+// 	AmendStage      IAmendRequestAmendStage
+// 	Confirmed       IAmendRequestConfirmation
+// 	IsFulfilled     bool
+// }
 
-// IStageContractContent is an auto generated low-level Go binding around an user-defined struct.
-type IStageContractContent struct {
-	RootHash       [32]byte
-	SignedTime     *big.Int
-	PrevHash       [32]byte
-	NumOfDocuments *big.Int
-	ContentHash    [][32]byte
-	Url            string
-	Acknowledge    []byte
-	Signature      []byte
-}
+// // IStageContractContent is an auto generated low-level Go binding around an user-defined struct.
+// type IStageContractContent struct {
+// 	RootHash       [32]byte
+// 	SignedTime     *big.Int
+// 	PrevHash       [32]byte
+// 	NumOfDocuments *big.Int
+// 	ContentHash    [][32]byte
+// 	Url            string
+// 	Acknowledge    []byte
+// 	Signature      []byte
+// }
 
 // RouterServiceABI is the input ABI used to generate the binding from.
 const RouterServiceABI = "[{\"inputs\":[{\"internalType\":\"contractILCManagement\",\"name\":\"_management\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_documentId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_stage\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_subStage\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"rootHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"signedTime\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"prevHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"numOfDocuments\",\"type\":\"uint256\"},{\"internalType\":\"bytes32[]\",\"name\":\"contentHash\",\"type\":\"bytes32[]\"},{\"internalType\":\"string\",\"name\":\"url\",\"type\":\"string\"},{\"internalType\":\"bytes\",\"name\":\"acknowledge\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"signature\",\"type\":\"bytes\"}],\"internalType\":\"structIStageContract.Content\",\"name\":\"_content\",\"type\":\"tuple\"}],\"name\":\"approve\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_documentId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_requestId\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"_signature\",\"type\":\"bytes\"}],\"name\":\"approveAmendment\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_documentId\",\"type\":\"uint256\"}],\"name\":\"closeLC\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_documentId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_requestId\",\"type\":\"uint256\"}],\"name\":\"fulfillAmendment\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_documentId\",\"type\":\"uint256\"}],\"name\":\"getAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"_contract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_typeOf\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_documentId\",\"type\":\"uint256\"}],\"name\":\"getAmendmentCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_totalAmendment\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_numOfRootAmendment\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_documentId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_requestId\",\"type\":\"uint256\"}],\"name\":\"getAmendmentRequest\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"typeOf\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"proposer\",\"type\":\"address\"},{\"internalType\":\"bytes32[]\",\"name\":\"migratingStages\",\"type\":\"bytes32[]\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"stage\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"subStage\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"rootHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"signedTime\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"prevHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"numOfDocuments\",\"type\":\"uint256\"},{\"internalType\":\"bytes32[]\",\"name\":\"contentHash\",\"type\":\"bytes32[]\"},{\"internalType\":\"string\",\"name\":\"url\",\"type\":\"string\"},{\"internalType\":\"bytes\",\"name\":\"acknowledge\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"signature\",\"type\":\"bytes\"}],\"internalType\":\"structIStageContract.Content\",\"name\":\"content\",\"type\":\"tuple\"}],\"internalType\":\"structIAmendRequest.AmendStage\",\"name\":\"amendStage\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"string\",\"name\":\"issuingBank\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"advisingBank\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"reimbursingBank\",\"type\":\"string\"},{\"internalType\":\"bytes\",\"name\":\"issuingBankSig\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"advisingBankSig\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"reimbursingBankSig\",\"type\":\"bytes\"}],\"internalType\":\"structIAmendRequest.Confirmation\",\"name\":\"confirmed\",\"type\":\"tuple\"},{\"internalType\":\"bool\",\"name\":\"isFulfilled\",\"type\":\"bool\"}],\"internalType\":\"structIAmendRequest.Request\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_documentId\",\"type\":\"uint256\"}],\"name\":\"getInvolvedParties\",\"outputs\":[{\"internalType\":\"string[]\",\"name\":\"\",\"type\":\"string[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_documentId\",\"type\":\"uint256\"}],\"name\":\"getRootHash\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_documentId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_stage\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_subStage\",\"type\":\"uint256\"}],\"name\":\"getStageContent\",\"outputs\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"rootHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"signedTime\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"prevHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"numOfDocuments\",\"type\":\"uint256\"},{\"internalType\":\"bytes32[]\",\"name\":\"contentHash\",\"type\":\"bytes32[]\"},{\"internalType\":\"string\",\"name\":\"url\",\"type\":\"string\"},{\"internalType\":\"bytes\",\"name\":\"acknowledge\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"signature\",\"type\":\"bytes\"}],\"internalType\":\"structIStageContract.Content\",\"name\":\"_content\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_documentId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_requestId\",\"type\":\"uint256\"}],\"name\":\"isAmendApproved\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"management\",\"outputs\":[{\"internalType\":\"contractILCManagement\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contractILCManagement\",\"name\":\"_management\",\"type\":\"address\"}],\"name\":\"setLCManagement\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_documentId\",\"type\":\"uint256\"},{\"internalType\":\"bytes32[]\",\"name\":\"_migratingStages\",\"type\":\"bytes32[]\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"stage\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"subStage\",\"type\":\"uint256\"},{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"rootHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"signedTime\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"prevHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"numOfDocuments\",\"type\":\"uint256\"},{\"internalType\":\"bytes32[]\",\"name\":\"contentHash\",\"type\":\"bytes32[]\"},{\"internalType\":\"string\",\"name\":\"url\",\"type\":\"string\"},{\"internalType\":\"bytes\",\"name\":\"acknowledge\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"signature\",\"type\":\"bytes\"}],\"internalType\":\"structIStageContract.Content\",\"name\":\"content\",\"type\":\"tuple\"}],\"internalType\":\"structIAmendRequest.AmendStage\",\"name\":\"_amendStage\",\"type\":\"tuple\"},{\"internalType\":\"bytes\",\"name\":\"_signature\",\"type\":\"bytes\"}],\"name\":\"submitAmendment\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]"
