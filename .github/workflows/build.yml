@@ -60,8 +60,8 @@ jobs:
         run: |
           output_dir=${{ runner.temp }}/docker
           mkdir -p $output_dir
-          docker build -t quorumengineering/quorum:pr .
-          docker save quorumengineering/quorum:pr > quorum-pr.tar
+          docker build -t fptblockchainlabbot/quorum:pr .
+          docker save fptblockchainlabbot/quorum:pr > quorum-pr.tar
           tar cfvz $output_dir/quorum-pr.tar.gz quorum-pr.tar
           echo "::set-output name=output_dir::$output_dir"
       - name: 'Upload workflow artifact - Docker image'
@@ -134,7 +134,7 @@ jobs:
           tar xfvz docker-image/quorum-pr.tar.gz
           docker load --input quorum-pr.tar
           docker_env_file="${{ runner.temp }}/env.list"
-          echo "TF_VAR_quorum_docker_image={ name = \"quorumengineering/quorum:pr\", local = true }" >> $docker_env_file
+          echo "TF_VAR_quorum_docker_image={ name = \"fptblockchainlabbot/quorum:pr\", local = true }" >> $docker_env_file
           echo "::set-output name=outputDir::${{ runner.temp }}"
           echo "::set-output name=dockerEnvFile::$docker_env_file"
       - name: 'Run acceptance tests'
@@ -246,7 +246,7 @@ jobs:
           tar xfvz docker-image/quorum-pr.tar.gz
           docker load --input quorum-pr.tar
           docker_env_file="${{ runner.temp }}/env.list"
-          echo "TF_VAR_quorum_docker_image={ name = \"quorumengineering/quorum:pr\", local = true }" >> $docker_env_file
+          echo "TF_VAR_quorum_docker_image={ name = \"fptblockchainlabbot/quorum:pr\", local = true }" >> $docker_env_file
           echo "TF_VAR_privacy_enhancements={block=0, enabled=${{ matrix.privacy-enhancements}}}" >> $docker_env_file
           echo "TF_VAR_privacy_precompile={block=0, enabled=${{ matrix.privacy-precompile}}}" >> $docker_env_file
           echo "TF_VAR_privacy_marker_transactions=${{ matrix.privacy-marker-transactions}}" >> $docker_env_file
@@ -286,7 +286,7 @@ jobs:
         run: |
           tar xfvz docker-image/quorum-pr.tar.gz
           docker load --input quorum-pr.tar
-          docker image tag quorumengineering/quorum:pr quorumengineering/quorum:develop
+          docker image tag fptblockchainlabbot/quorum:pr fptblockchainlabbot/quorum:develop
           docker image ls
       - name: Set up Java
         uses: actions/setup-java@v2
