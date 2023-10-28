@@ -29,7 +29,7 @@ const (
 	QuorumVersionMajor = 23
 	QuorumVersionMinor = 4
 	QuorumVersionPatch = 0
-	QuorumVersionMeta  = "fpt.blockchain.lab-0.5.4"
+	QuorumVersionMeta  = "fpt.blockchain.lab-0.5.5"
 )
 
 // Version holds the textual version string.
