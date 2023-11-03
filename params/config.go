@@ -263,6 +263,33 @@ var (
 
 	QuorumTestChainConfig    = &ChainConfig{big.NewInt(10), big.NewInt(0), nil, false, big.NewInt(0), common.Hash{}, big.NewInt(0), big.NewInt(0), big.NewInt(0), big.NewInt(0), big.NewInt(0), big.NewInt(0), nil, nil, nil, nil, nil, new(EthashConfig), nil, nil, nil, nil, nil, true, 64, 32, big.NewInt(0), big.NewInt(0), nil, big.NewInt(0), false, nil, nil}
 	QuorumMPSTestChainConfig = &ChainConfig{big.NewInt(10), big.NewInt(0), nil, false, big.NewInt(0), common.Hash{}, big.NewInt(0), big.NewInt(0), big.NewInt(0), big.NewInt(0), big.NewInt(0), big.NewInt(0), nil, nil, nil, nil, nil, new(EthashConfig), nil, nil, nil, nil, nil, true, 64, 32, big.NewInt(0), big.NewInt(0), nil, big.NewInt(0), true, nil, nil}
+
+	// FPT
+	FPTChainConfig = &ChainConfig{
+		ChainID:             new(big.Int).SetInt64(6787),
+		HomesteadBlock:      big.NewInt(0),
+		EIP150Block:         big.NewInt(0),
+		EIP155Block:         big.NewInt(0),
+		EIP158Block:         big.NewInt(0),
+		ByzantiumBlock:      big.NewInt(0),
+		ConstantinopleBlock: big.NewInt(0),
+		PetersburgBlock:     big.NewInt(0),
+		IstanbulBlock:       big.NewInt(0),
+		MuirGlacierBlock:    big.NewInt(0),
+		BerlinBlock:         big.NewInt(0),
+		IsQuorum:            true,
+		QBFT: &QBFTConfig{
+
+			BFTConfig: &BFTConfig{
+				ProposerPolicy:          1,
+				EpochLength:             86400,
+				BlockPeriodSeconds:      1,                  // blocktime 1
+				EmptyBlockPeriodSeconds: &[]uint64{3600}[0], // 1 hour
+				Ceil2Nby3Block:          big.NewInt(0),
+			},
+		},
+	}
+	// FPT
 )
 
 // TrustedCheckpoint represents a set of post-processed trie roots (CHT and
