@@ -1,0 +1,16 @@
+{
+    "name": "permission-contract",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "test": "hardhat test"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@nomicfoundation/hardhat-toolbox": "^1.0.2",
+        "@nomiclabs/hardhat-etherscan": "^3.1.7",
+        "chai-as-promised": "^7.1.1",
+        "hardhat": "^2.10.2"
+    }
+}
